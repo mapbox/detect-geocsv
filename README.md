@@ -15,7 +15,7 @@ npm install -g detect-geocsv
 
 ## Example
 ```
-var detect = require('detect-geo-csv');
+var detect = require('detect-geocsv');
 var buffer = fs.readFileSync('path/to/data/file.csv');
 
 var isgeocsv = detect(buffer);
