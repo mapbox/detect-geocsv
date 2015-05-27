@@ -8,7 +8,9 @@ Version format follows [Semantic Version](http://semver.org/)
 [![Build Status](https://travis-ci.org/mapbox/detect-geocsv.svg?branch=master)](https://travis-ci.org/mapbox/detect-geocsv)
 
 ## Install
+
 With npm:
+
 ```
 npm install -g detect-geocsv
 ```
@@ -23,5 +25,13 @@ var isgeocsv = detect(buffer);
 assert.ok(isgeocsv);
 ```
 
+## CLI Usage
+
+```sh
+$ detect-geocsv file.csv
+# echoes either true or false
+```
+
 ## Tests
+
 `npm test`

@@ -6,6 +6,9 @@
   "scripts": {
     "test": "tape test/*.js"
   },
+  "bin": {
+    "detect-geocsv": "bin/detect-geocsv"
+  },
   "keywords": [
     "csv",
     "geocsv",
