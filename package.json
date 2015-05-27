@@ -14,6 +14,10 @@
   "author": "Jake Pruitt",
   "devDependencies": {
     "tape": "^4.0.0",
-    "mapnik-test-data":"https://mapbox-npm.s3.amazonaws.com/package/mapnik-test-data-2.0.5-c84800ed20a6a9bc2143dd11b1b2a3190b9ae698.tgz"
+    "mapnik-test-data": "https://mapbox-npm.s3.amazonaws.com/package/mapnik-test-data-2.0.5-c84800ed20a6a9bc2143dd11b1b2a3190b9ae698.tgz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mapbox/detect-geocsv.git"
   }
 }
