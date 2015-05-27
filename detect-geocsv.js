@@ -51,15 +51,15 @@ function detectGeometryField(fieldnames) {
             result = {
                 id: i,
                 name: fieldnames[i],
-                encoding: "WKT"
-            }
+                encoding: 'WKT'
+            };
             break;
         }
         if (name === 'geojson') {
             result = {
                 id: i,
                 name: fieldnames[i],
-                encoding: "GeoJSON"
+                encoding: 'GeoJSON'
             };
             break;
         }
@@ -73,8 +73,8 @@ function detectGeometryField(fieldnames) {
             result = result || {
                 id: {},
                 name: {},
-                encoding: "PointFromColumns"
-            }
+                encoding: 'PointFromColumns'
+            };
             continue;
         }
         if (name === 'y'
@@ -85,10 +85,10 @@ function detectGeometryField(fieldnames) {
             result = result || {
                 id: {},
                 name: {},
-                encoding: "PointFromColumns"
-            }
+                encoding: 'PointFromColumns'
+            };
             continue;
         }
     }
     return result;
-};
+}
