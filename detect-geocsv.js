@@ -3,32 +3,27 @@ module.exports = function(buf) {
 
     var i = 0;
 
-    while (lines[i] === '')
+    while (lines[i] === '') {
         i++;
+    }
 
     var firstline = lines[i];
 
     var separator = detectSeparator(firstline);
 
-    var headers = firstline.split(separator);
-
-    headers = headers.map(function(header) {
+    var headers = firstline.split(separator).map(function(header) {
         return header.replace(/"/g, '');
     });
 
     var geometryField = detectGeometryField(headers);
-    if (!geometryField) {
-        return false;
-    }
-
-    return true;
+    return !!geometryField;
 };
 
 function detectSeparator(csv_line) {
     // implemented like: https://github.com/mapnik/mapnik/blob/f42805a5321d42f59b447a70f459058cf2c6cd5c/plugins/input/csv/csv_datasource.cpp#L209
 
     var separators = [',','\t','|',';'];
-    var counts = separators.map(function(separator){
+    var counts = separators.map(function(separator) {
         return csv_line.split(separator).length - 1;
     });
 
