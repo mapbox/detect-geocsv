@@ -21,7 +21,11 @@ tape('[CSV] Detecting valid CSV files: should return true', function(assert) {
             return assert.end(err);
         }
         var result = isgeocsv(buffer);
-        assert.ok(result, filename + 'comes back true');
+        if (/empty/.test(filename)) {
+            assert.ok(!result, filename + ' comes back false');
+        } else {
+            assert.ok(result, filename + ' comes back true');
+        }
     });
     assert.end();
 });
@@ -43,7 +47,7 @@ tape('[GEOJSON] Detecting non-CSV files: should return false', function(assert) 
             return assert.end(err);
         }
         var result = isgeocsv(buffer);
-        assert.ok(!result, filename + 'comes back false');
+        assert.ok(!result, filename + ' comes back false');
     });
     assert.end();
 });
@@ -65,7 +69,7 @@ tape('[GEOTIFF] Detecting non-CSV files: should return false', function(assert) 
             return assert.end(err);
         }
         var result = isgeocsv(buffer);
-        assert.ok(!result, filename + 'comes back false');
+        assert.ok(!result, filename + ' comes back false');
     });
     assert.end();
 });

@@ -17,7 +17,7 @@
   "author": "Jake Pruitt",
   "devDependencies": {
     "tape": "^4.0.0",
-    "mapnik-test-data": "https://mapbox-npm.s3.amazonaws.com/package/mapnik-test-data-2.0.5-c84800ed20a6a9bc2143dd11b1b2a3190b9ae698.tgz"
+    "mapnik-test-data": "https://mapbox-npm.s3.amazonaws.com/package/mapnik-test-data-2.1.0-04476a347181c625e3356e2e56f8e2f43e134260.tgz"
   },
   "repository": {
     "type": "git",

@@ -3,4 +3,4 @@
 var detect = require('../'),
     fs = require('fs');
 
-console.log(detect(fs.readFileSync(process.argv[1])));
+console.log(detect(fs.readFileSync(process.argv[2])));

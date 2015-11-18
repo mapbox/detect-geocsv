@@ -1,13 +1,15 @@
 module.exports = function(buf) {
     var lines = buf.toString().split(/\r\n|\r|\n/g);
 
-    var i = 0;
+    lines = lines.filter(function(line) {
+        return line !== '';
+    });
 
-    while (lines[i] === '') {
-        i++;
+    if (!lines.length) {
+        return false
     }
 
-    var firstline = lines[i];
+    var firstline = lines[0];
 
     var separator = detectSeparator(firstline);
 
