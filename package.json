@@ -1,6 +1,6 @@
 {
   "name": "detect-geocsv",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Detects geocsv files from first 100 bytes.",
   "main": "detect-geocsv.js",
   "scripts": {
