@@ -4,7 +4,8 @@
   "description": "Detects geocsv files from first 100 bytes.",
   "main": "detect-geocsv.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "doc": "documentation-readme README.md -s API",
+    "test": "eslint detect-geocsv.js && tape test/*.js"
   },
   "bin": {
     "detect-geocsv": "bin/detect-geocsv"
@@ -16,8 +17,10 @@
   ],
   "author": "Jake Pruitt",
   "devDependencies": {
-    "tape": "^4.0.0",
-    "mapnik-test-data": "https://mapbox-npm.s3.amazonaws.com/package/mapnik-test-data-2.1.0-04476a347181c625e3356e2e56f8e2f43e134260.tgz"
+    "eslint": "^1.10.3",
+    "mapnik-test-data": "https://mapbox-npm.s3.amazonaws.com/package/mapnik-test-data-2.1.0-04476a347181c625e3356e2e56f8e2f43e134260.tgz",
+    "documentation-readme": "^2.1.0",
+    "tape": "^4.0.0"
   },
   "repository": {
     "type": "git",
