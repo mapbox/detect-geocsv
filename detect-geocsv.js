@@ -44,7 +44,7 @@ function hasOne(list, items) {
 function detectGeometryField(fieldnames) {
     // adapted from: <https://github.com/mapnik/mapnik/blob/f42805a5321d42f59b447a70f459058cf2c6cd5c/plugins/input/csv/csv_datasource.cpp#L293>
     var lowerCaseNames = fieldnames.map(function(name) {
-        return name.toLowerCase();
+        return name.toLowerCase().trim();
     });
 
     return hasOne(lowerCaseNames, ['wkt', 'geom', 'geometry', 'geojson']) ||
