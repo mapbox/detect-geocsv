@@ -17,8 +17,11 @@ function detectGeoCSV(buf) {
             return line !== '';
         });
 
-    return !!lines.length &&
-        !!detectGeometryField(lines[0]
+    return lines.length > 0 &&
+        // if the CSV file begins with {"type":, it's more likely
+        // a GeoJSON file
+        !lines[0].substring(0, 50).match(/^\s*\{\s*"type"\s*:/) &&
+        detectGeometryField(lines[0]
             .split(detectSeparator(lines[0]))
             .map(function(header) {
                 return header.replace(/"/g, '');
@@ -41,6 +44,12 @@ function hasOne(list, items) {
     });
 }
 
+function hasOneThatContains(list, str) {
+    return list.some(function(item) {
+        return item.indexOf(str) !== -1;
+    });
+}
+
 function detectGeometryField(fieldnames) {
     // adapted from: <https://github.com/mapnik/mapnik/blob/f42805a5321d42f59b447a70f459058cf2c6cd5c/plugins/input/csv/csv_datasource.cpp#L293>
     var lowerCaseNames = fieldnames.map(function(name) {
@@ -48,8 +57,10 @@ function detectGeometryField(fieldnames) {
     });
 
     return hasOne(lowerCaseNames, ['wkt', 'geom', 'geometry', 'geojson']) ||
-        (hasOne(lowerCaseNames, ['x', 'lon', 'lng', 'long', 'longitude']) &&
-        hasOne(lowerCaseNames, ['y', 'lat', 'latitude']));
+        ((hasOne(lowerCaseNames, ['x', 'lon', 'lng', 'long']) ||
+            hasOneThatContains(lowerCaseNames, 'longitude')) &&
+        (hasOne(lowerCaseNames, ['y', 'lat']) ||
+            hasOneThatContains(lowerCaseNames, 'latitude')));
 
 }
 
