@@ -17,8 +17,11 @@ function detectGeoCSV(buf) {
             return line !== '';
         });
 
-    return !!lines.length &&
-        !!detectGeometryField(lines[0]
+    return lines.length > 0 &&
+        // if the CSV file begins with {"type":, it's more likely
+        // a GeoJSON file
+        !lines[0].substring(0, 50).match(/^\s*\{\s*"type"\s*:/) &&
+        detectGeometryField(lines[0]
             .split(detectSeparator(lines[0]))
             .map(function(header) {
                 return header.replace(/"/g, '');
