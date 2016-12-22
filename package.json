@@ -17,7 +17,7 @@
   ],
   "author": "Jake Pruitt",
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^3.12.2",
     "mapnik-test-data": "2.2.0",
     "documentation-readme": "^2.1.0",
     "tape": "^4.0.0"
