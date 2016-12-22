@@ -5,7 +5,7 @@
  * @param {string|Buffer} buf input, an upload that could be any format
  * @returns {boolean} whether the content is or is not geographic
  * @example
- * var detect = require('detect-geocsv');
+ * var detect = require('@mapbox/detect-geocsv');
  * var buffer = fs.readFileSync('path/to/data/file.csv');
  * var isgeocsv = detect(buffer);
  * assert.ok(isgeocsv);
