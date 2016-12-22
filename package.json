@@ -5,7 +5,7 @@
   "main": "detect-geocsv.js",
   "scripts": {
     "doc": "documentation-readme README.md -s API",
-    "test": "eslint detect-geocsv.js && tape test/*.js"
+    "test": "eslint detect-geocsv.js && tap --coverage test/*.js"
   },
   "license": "MIT",
   "bin": {
@@ -18,10 +18,10 @@
   ],
   "author": "Jake Pruitt",
   "devDependencies": {
+    "documentation-readme": "^2.1.0",
     "eslint": "^3.12.2",
     "mapnik-test-data": "2.2.0",
-    "documentation-readme": "^2.1.0",
-    "tape": "^4.0.0"
+    "tap": "^8.0.1"
   },
   "repository": {
     "type": "git",

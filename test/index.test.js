@@ -1,10 +1,10 @@
-var tape = require('tape');
+var test = require('tap').test;
 var path = require('path');
 var fs = require('fs');
 var testData = path.dirname(require.resolve('mapnik-test-data'));
 var isgeocsv = require('../detect-geocsv.js');
 
-tape('[CSV] Detecting valid CSV files: should return true', function(assert) {
+test('[CSV] Detecting valid CSV files: should return true', function(assert) {
     var folder = testData + '/data/csv/';
     var files = fs.readdirSync(folder);
 
@@ -30,7 +30,7 @@ tape('[CSV] Detecting valid CSV files: should return true', function(assert) {
     assert.end();
 });
 
-tape('[GEOJSON] Detecting non-CSV files: should return false', function(assert) {
+test('[GEOJSON] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/geojson/';
     var files = fs.readdirSync(folder);
 
@@ -52,7 +52,7 @@ tape('[GEOJSON] Detecting non-CSV files: should return false', function(assert) 
     assert.end();
 });
 
-tape('[GEOTIFF] Detecting non-CSV files: should return false', function(assert) {
+test('[GEOTIFF] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/geotiff/';
     var files = fs.readdirSync(folder);
 
@@ -74,7 +74,7 @@ tape('[GEOTIFF] Detecting non-CSV files: should return false', function(assert) 
     assert.end();
 });
 
-tape('[GPX] Detecting non-CSV files: should return false', function(assert) {
+test('[GPX] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/gpx/';
     var files = fs.readdirSync(folder);
 
@@ -96,7 +96,7 @@ tape('[GPX] Detecting non-CSV files: should return false', function(assert) {
     assert.end();
 });
 
-tape('[KML] Detecting non-CSV files: should return false', function(assert) {
+test('[KML] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/kml/';
     var files = fs.readdirSync(folder);
 
@@ -118,7 +118,7 @@ tape('[KML] Detecting non-CSV files: should return false', function(assert) {
     assert.end();
 });
 
-tape('[topojson] Detecting non-CSV files: should return false', function(assert) {
+test('[topojson] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/topojson/';
     var files = fs.readdirSync(folder);
 
@@ -140,7 +140,7 @@ tape('[topojson] Detecting non-CSV files: should return false', function(assert)
     assert.end();
 });
 
-tape('[vrt] Detecting non-CSV files: should return false', function(assert) {
+test('[vrt] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/vrt/';
     var files = fs.readdirSync(folder);
 
@@ -162,7 +162,7 @@ tape('[vrt] Detecting non-CSV files: should return false', function(assert) {
     assert.end();
 });
 
-tape('[zip] Detecting non-CSV files: should return false', function(assert) {
+test('[zip] Detecting non-CSV files: should return false', function(assert) {
     var folder = testData + '/data/zip/';
     var files = fs.readdirSync(folder);
 
