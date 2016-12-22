@@ -7,6 +7,7 @@
     "doc": "documentation-readme README.md -s API",
     "test": "eslint detect-geocsv.js && tape test/*.js"
   },
+  "license": "MIT",
   "bin": {
     "detect-geocsv": "bin/detect-geocsv"
   },
