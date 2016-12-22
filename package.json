@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/detect-geocsv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Detects geocsv files from first 100 bytes.",
   "main": "detect-geocsv.js",
   "scripts": {
